@@ -45,10 +45,13 @@ class _HomeViewState extends State<HomeView>
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
         ),
         elevation: 0,
         bottom: TabBar(
+          labelColor: Colors.white,
+          unselectedLabelColor: Colors.white38,
           controller: _tabController,
           indicatorColor: Colors.black,
           tabs: const [
@@ -60,6 +63,7 @@ class _HomeViewState extends State<HomeView>
         ),
         actions: [
           PopupMenuButton(
+            iconColor: Colors.white,
             tooltip: 'show menu',
             shape: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
             onSelected: (value) => onSelected(value, context),

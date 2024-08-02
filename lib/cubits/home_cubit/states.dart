@@ -6,7 +6,11 @@ class HomeGetUserSuccessState extends HomeStates {}
 
 class HomeGetUserLoadingState extends HomeStates {}
 
-class HomeGetUserErrorState extends HomeStates {}
+class HomeGetUserErrorState extends HomeStates {
+  final String errMsg;
+
+  HomeGetUserErrorState(this.errMsg);
+}
 
 class GetUserDataSuccessState extends HomeStates {}
 

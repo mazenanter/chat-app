@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_chat_app/cubits/home_cubit/cubit.dart';
@@ -12,7 +14,11 @@ class ChatListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<HomeCubit, HomeStates>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is HomeGetUserErrorState) {
+          log(state.errMsg);
+        }
+      },
       builder: (context, state) {
         if (state is EditProfileLoadingState) {
           HomeCubit.get(context).getUserData();
